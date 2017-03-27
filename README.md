@@ -34,4 +34,11 @@ It demonstrates the following:
 
 * size of images suitable for all mobile viewports
 * custom CSS to ensure images are always fitted in height and horizontally centered
-* use of links and ls-links library to make the slides tappable to open web sites in the in-app browser. 
+* use of links and ls-links library to make the slides tappable to open web sites in the in-app browser.
+ 
+To get started rapidly with this example:
+* replace the images in the "img" folder, keeping the width of the images the same and core content within them centered
+* replace the links in entrypoint_default.html
+* configure your Content Feature in Ubiquity using a height of around 30%
+* to test, use the test_viewport.html file
+
