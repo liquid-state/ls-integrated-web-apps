@@ -1,0 +1,29 @@
+/* To make full height images display at full height, horizontally centered: */
+
+.slick-track {
+  /* force height containment on the entire track
+  Note: using height:100vh; will stretch the image
+  */
+  height: 100%; /*was 100vh*/
+}
+.slick-slide {
+  /* crop wide slides */
+  overflow: hidden;
+}
+.slide-content {
+  /* let slide be as wide as needed so that image doesn't stretch */
+  /*width: auto;*/
+}
+.slide-content .full-height-image {
+  /*make img element fit in height*/
+  min-height: 100vh;
+  max-height: 100vh;
+  width: auto;
+}
+
+body.ios-pre-10-fix .slide-content .full-height-image {
+  /* Safari on iOS 9.2 tries to shrink the image to fit in its flex parent. So tell it not too.
+  Note: this doesn't happen on iOS 10. */
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+}

@@ -19,9 +19,19 @@ This Integrated Web App displays a single centred image and call-to-action butto
 * use of flexbox for responsiveness and alignment
 * use of ls-links.js javascript library to simplify integration with the rest of the app (e.g. triggering an LS action opening a web site in an in-app browser).
 
-### Content Feature example 02: slider
+### Content Feature example 02: slider with centered text
 
 This Integrated Web App displays a slider which is responsive. It demonstrates the following:
 
 * use slick.js library to power the slider
 * custom CSS (including flexbox) to achieve greater responsiveness
+
+
+### Content Feature example 03: slider with full-height images
+
+This Integrated Web App displays a slider which is responsive and uses images.
+It demonstrates the following:
+
+* size of images suitable for all mobile viewports
+* custom CSS to ensure images are always fitted in height and horizontally centered
+* use of links and ls-links library to make the slides tappable to open web sites in the in-app browser. 
