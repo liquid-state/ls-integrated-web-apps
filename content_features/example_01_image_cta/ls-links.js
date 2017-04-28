@@ -1,11 +1,17 @@
 // intercept any anchor with a class of "ls-link" and turn it into an LS action
 // for the mobile app to open in an in-app browser
 $(function() {
-    $('a.ls-link').on('click', function(e) {
+    $('.ls-link').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         var $target = $(e.target);
         var url = $target.attr('href');
+        if (!url) {
+            url = $target.attr('data-href');
+        }
+        if (!url) {
+            return;
+        }
         var item_definition = {item_type: 'web', url: url, settings: {}};
         if ($target.hasClass('ls-link-external')) {
             item_definition['launch_type'] = 'external';
