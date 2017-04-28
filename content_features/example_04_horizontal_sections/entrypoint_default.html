@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+        }
+
+        .section {
+            margin: 0 5px 5px;
+            flex-grow: 1;
+            background-color: #fff;
+            background-image: url(./01.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% auto; /* by default, fit bacikgroudn images in width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .section:first-child {
+            margin-top: 5px;
+        }
+        .section.fill-background-width {
+            background-size: 100% auto;
+        }
+        .section.fill-background-height {
+            background-size: auto 100%;
+        }
+        #section-first {
+            background-image: url(./01.png);
+            min-height: 50%;
+        }
+        #section-second {
+            background-image: url(./01.png);
+        }
+        #section-third {
+            background-image: url(./background.png);
+        }
+
+        .section p {
+            font-family: Helvetica, sans-serif;
+            font-size: 6vw; /* increase font size according to viewport */
+            color: #fff;
+            text-align: center;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        /* on narrower viewports, just fix the font size */
+        .section.fill-background-height p {
+            font-size: 32pt;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+<!--
+    Note: the "section-first" section uses the 01.jpg background image which has a width/height ratio of 1.5
+    We store this ratio in the "data-bg-img-ratio" attribute to then make use of it in javascript to dynamically
+    set the sizing behaviour of the background image based on the size of the div.
+    Same goes for all other sections.
+-->
+    <div id="section-first" class="section ls-link ls-link-push" data-href="http://example.com/01/" data-bg-img-ratio="1.5">
+        <p>First section</p>
+    </div>
+    <div id="section-second" class="section ls-link ls-link-push" data-href="http://example.com/02/" data-bg-img-ratio="1.5">
+        <p>Second section</p>
+    </div>
+    <div id="section-third" class="section ls-link ls-link-push" data-href="http://example.com/03/" data-bg-img-ratio="1.6">
+        <p>Third section</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="./ls-links.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        var fit_bg_images = function() {
+            // for each section, calculate current width/height ratio and compare to background image used
+            // in order to determine whether it should be fitted in height or width
+            $('.section').each(function(index, el) {
+                var $el = $(el);
+                var ratio = parseFloat($el.attr('data-bg-img-ratio'));
+                if ($el.width() / $el.height() > ratio) {
+                    $el.removeClass('fill-background-height');
+                    $el.addClass('fill-background-width');
+                } else {
+                    $el.removeClass('fill-background-width');
+                    $el.addClass('fill-background-height');
+                }
+            });
+        }
+        $(window).on('resize', fit_bg_images); // re-fit images upon resize a browser's window
+        fit_bg_images(); // initial fitting of images upon page load
+    })
+</script>
+
+</body>
+</html>
