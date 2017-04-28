@@ -1,0 +1,88 @@
+/* the following are modifications for what is defined in main.min.css which I can't modify easily
+as it's minified and we don't have the unminified code */
+
+
+/* Remove the use of 100vh for the height of content divs.
+ This makes them not fully contain their children elements, leading to mis-positioning of what might comes after,
+ for example the re-positioned pagination indicator.
+*/
+.container > .content {
+    height: auto;
+}
+
+
+.prev-button, .prev-button:focus, .prev-button:visited,
+.close-button, .close-button:focus, .close-button:visited {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.4em;
+    z-index: 10000;
+}
+.prev-button, .prev-button:focus, .prev-button:visited {
+    right: 0;
+    left: 15px;
+}
+
+#registration-code-invalid {
+    display: none;
+    background: #fff;
+    color: #000;
+    padding: 5px;
+    position: relative;
+    top: -5px;
+    text-align: center;
+    border-radius: 10em;
+}
+
+
+.edit-block {
+    position: relative;
+}
+
+.content .app-form__btn-edit {
+    top: auto;
+    bottom: 15px;
+    right: -3px;
+}
+
+
+
+/*Stellar Vision update*/
+
+.first-screen .auth-logo {
+    top: 120px;
+}
+.first-screen .auth-logo__img {
+    width: 90px;
+}
+
+.auth-logo {
+    top: 80px;
+    width: 70px;
+}
+.auth-logo__img {
+    width: 70px;
+    height: auto;
+}
+
+.main-logo {
+    top: 160px;
+    text-align: center;
+}
+
+.main-logo__title span {
+    border-bottom: none;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+#welcome-message {
+    color: #fff;
+    font-family: Sfns, Helvetica, sans-serif;
+    font-size: 18pt;
+    text-align: center;
+    position: relative;
+    top: 280px;
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Edit your profile</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- FIXME -->
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<!-- FIXME -->
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- STYLES -->
+		<!-- Load CSS -->
+		<link rel="stylesheet" href="css/fonts.min.css">
+		<link rel="stylesheet" href="css/main.min.css">
+		<link rel="stylesheet" href="css/main_overrides.css">
+		<!-- Bootstrap core CSS -->
+		<link href="libs/mdb/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="libs/mdb/css/mdb.min.css" rel="stylesheet">
+	<!-- STYLES END -->
+
+	<style type="text/css">
+		.fourth-screen {
+			display: block;
+		}
+		.app-header {
+			margin-bottom: 0;
+		}
+
+		.tabs-wrapper .nav.classic-tabs.tabs-orange {
+			background-color: #e0e4e8;
+			font-weight: bold;
+		}
+		.tabs-wrapper .nav-item > a {
+			line-height: 1;
+			padding: 15px 14px;
+			color: #808285;
+		}
+		.tabs-wrapper .classic-tabs.tabs-orange li a.active {
+			border-bottom-color: #ffa000;
+			color: #000;
+		}
+
+		[type=radio]:checked+label:after {
+			border-color: #ffa000;
+			background-color: #ffa000;
+		}
+
+		.pagination {
+			justify-content: center;
+		}
+
+		#pathway-container .form-group {
+			margin-bottom: 0;
+		}
+		#pathway-stage-template,
+		#pathway-container>p {
+			display: none;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="screens">
+
+		<div id="pathway-stage-template">
+			<fieldset class="form-group">
+				<input id="stage-STAGE_INDEX" type="radio" name="care_pathway_stage[]" value="STAGE_VALUE" /> <label for="stage-STAGE_INDEX">STAGE_NAME</label>
+			</fieldset>
+		</div>
+
+		<!-- Start of registration form. Includes all screens. -->
+		<form id="registration-form" class="app-form">
+
+		<!-- Third screen: diateray preferences -->
+		<div class="fourth-screen js-sector">
+			<div class="app-header m-b-30">
+				<a class="close-button" href="liquidstate://app_user/dismiss/">X</a>
+				<div class="auth-logo">
+					<img src="img/icons/icon-logo-white.png" alt="" class="auth-logo__img icon-logo">
+				</div>
+			</div>
+
+			<div class="tabs-wrapper">
+				<ul class="nav classic-tabs tabs-orange" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link waves-light waves-effect waves-light active" href="#" role="tab" aria-expanded="true"><i class="fa fa-user fa-2x" aria-hidden="true"></i><br> Dietary <br>preferences</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-light waves-effect waves-light js-replace" data-target="fifth-screen" href="#" role="tab" aria-expanded="false"><i class="fa fa-heart fa-2x" aria-hidden="true"></i><br> Activity &amp; <br>health goals</a>
+					</li>
+			</ul></div>
+
+			<div class="container">
+				<div class="content">
+					<h2 class="mid-title text-center m-t-20 m-b-5">Select dietary preferences</h2>
+					<h6 class="small-title text-center">More than one answer is possible</h6>
+						<div class="check-images">
+							<div class="check-image">
+								<div class="check-wrapper absolute-right">
+									<label class="app-check-image i-none">
+										<input type="checkbox" name="dietary[]" value="None">
+										<i></i>
+									</label>
+									<span class="check-image__text">None</span>
+								</div>
+							</div>
+							<div class="check-image">
+								<div class="check-wrapper absolute-left">
+									<label class="app-check-image i-vegitarian">
+										<input type="checkbox" name="dietary[]" value="Vegetarian">
+										<i></i>
+									</label>
+									<span class="check-image__text">Vegetarian</span>
+								</div>
+							</div>
+						</div>
+						<div class="check-images">
+							<div class="check-image">
+								<div class="check-wrapper absolute-right">
+									<label class="app-check-image i-vegan">
+										<input type="checkbox" name="dietary[]" value="Vegan">
+										<i></i>
+									</label>
+									<span class="check-image__text">Vegan</span>
+								</div>
+							</div>
+							<div class="check-image">
+								<div class="check-wrapper absolute-left">
+									<label class="app-check-image i-muslim">
+										<input type="checkbox" name="dietary[]" value="Halal">
+										<i></i>
+									</label>
+									<span class="check-image__text">Halal</span>
+								</div>
+							</div>
+						</div>
+						<div class="check-images">
+							<div class="check-image">
+								<div class="check-wrapper absolute-right">
+									<label class="app-check-image i-low-salt">
+										<input type="checkbox" name="dietary[]" value="Low salt">
+										<i></i>
+									</label>
+									<span class="check-image__text">Low salt</span>
+								</div>
+							</div>
+							<div class="check-image">
+								<div class="check-wrapper absolute-left">
+									<label class="app-check-image i-low-calorie">
+										<input type="checkbox" name="dietary[]" value="Low calorie">
+										<i></i>
+									</label>
+									<span class="check-image__text">Low calorie</span>
+								</div>
+							</div>
+						</div>
+						<div class="check-images">
+							<div class="check-image">
+								<div class="check-wrapper absolute-right">
+									<label class="app-check-image i-no-nuts">
+										<input type="checkbox" name="dietary[]" value="No nuts">
+										<i></i>
+									</label>
+									<span class="check-image__text">No nuts</span>
+								</div>
+							</div>
+							<div class="check-image">
+								<div class="check-wrapper absolute-left">
+									<label class="app-check-image i-no-dairy">
+										<input type="checkbox" name="dietary[]" value="No dairy">
+										<i></i>
+									</label>
+									<span class="check-image__text">No dairy</span>
+								</div>
+							</div>
+						</div>
+						<div class="check-images">
+							<div class="check-image">
+								<div class="check-wrapper absolute-right">
+									<label class="app-check-image i-low-fat">
+										<input type="checkbox" name="dietary[]" value="Low fat">
+										<i></i>
+									</label>
+									<span class="check-image__text">Low fat</span>
+								</div>
+							</div>
+							<div class="check-image">
+								<div class="check-wrapper absolute-left">
+									<label class="app-check-image i-gluten-free">
+										<input type="checkbox" name="dietary[]" value="Gluten free">
+										<i></i>
+									</label>
+									<span class="check-image__text">Gluten free</span>
+								</div>
+							</div>
+						</div>
+						<a class="btn btn-warning btn-rounded full-width btn-next js-replace" data-target="fifth-screen">Next <i class="icon-next"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fourth screen: activity levels and helath goals -->
+		<div class="fifth-screen js-sector">
+			<div class="app-header m-b-30">
+				<a class="close-button" href="liquidstate://app_user/dismiss/">X</a>
+				<div class="auth-logo">
+					<img src="img/icons/icon-logo-white.png" alt="" class="auth-logo__img icon-logo">
+				</div>
+			</div>
+			<div class="tabs-wrapper">
+				<ul class="nav classic-tabs tabs-orange" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link waves-light waves-effect waves-light js-replace" data-target="fourth-screen" href="#" role="tab" aria-expanded="false"><i class="fa fa-user fa-2x" aria-hidden="true"></i><br> Dietary <br>preferences</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-light waves-effect waves-light active" href="#" role="tab" aria-expanded="true"><i class="fa fa-heart fa-2x" aria-hidden="true"></i><br> Activity &amp; <br>health goals</a>
+					</li>
+			</ul></div>
+			<div class="container">
+				<div class="content">
+					<h2 class="mid-title text-center m-t-20 m-b-5">How active are you?</h2>
+					<h6 class="small-title text-center">One answer only</h6>
+						<div class="how-active">
+							<div class="check-images">
+								<div class="check-image">
+									<div class="check-wrapper absolute-right">
+										<label class="app-check-image i-none">
+											<input type="radio" name="how-active[]" value="Not at all">
+											<i></i>
+										</label>
+										<span class="check-image__text">Not at all</span>
+									</div>
+								</div>
+								<div class="check-image">
+									<div class="check-wrapper absolute-left">
+										<label class="app-check-image i-little">
+											<input type="radio" name="how-active[]" value="A little">
+											<i></i>
+										</label>
+										<span class="check-image__text">A little</span>
+									</div>
+								</div>
+							</div>
+							<div class="check-images">
+								<div class="check-image">
+									<div class="check-wrapper absolute-right">
+										<label class="app-check-image i-moderate">
+											<input type="radio" name="how-active[]" value="Moderate">
+											<i></i>
+										</label>
+										<span class="check-image__text">Moderate</span>
+									</div>
+								</div>
+								<div class="check-image">
+									<div class="check-wrapper absolute-left">
+										<label class="app-check-image i-very">
+											<input type="radio" name="how-active[]" value="Very">
+											<i></i>
+										</label>
+										<span class="check-image__text">Very</span>
+									</div>
+								</div>
+							</div>
+							<div class="check-images">
+								<div class="check-image">
+									<div class="check-wrapper absolute-right">
+										<label class="app-check-image i-extremaly">
+											<input type="radio" name="how-active[]" value="Extremely">
+											<i></i>
+										</label>
+										<span class="check-image__text">Extremely</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<h2 class="mid-title text-center m-t-40 m-b-2">What are your health goals?</h2>
+						<h6 class="small-title text-center m-b-40">More than one answer possible</h6>
+						<div class="health-goals m-b-40">
+							<div class="check-images">
+								<div class="check-image">
+									<div class="check-wrapper absolute-right">
+										<label class="app-check-image i-none">
+											<input type="checkbox" name="health-goals[]" value="No goals">
+											<i></i>
+										</label>
+										<span class="check-image__text">No goals</span>
+									</div>
+								</div>
+								<div class="check-image">
+									<div class="check-wrapper absolute-left">
+										<label class="app-check-image i-eat-better">
+											<input type="checkbox" name="health-goals[]" value="Eat better">
+											<i></i>
+										</label>
+										<span class="check-image__text">Eat better</span>
+									</div>
+								</div>
+							</div>
+							<div class="check-images">
+								<div class="check-image">
+									<div class="check-wrapper absolute-right">
+										<label class="app-check-image i-exercise-more">
+											<input type="checkbox" name="health-goals[]" value="Exercise more">
+											<i></i>
+										</label>
+										<span class="check-image__text">Exercise more</span>
+									</div>
+								</div>
+								<div class="check-image">
+									<div class="check-wrapper absolute-left">
+										<label class="app-check-image i-loose-weight">
+											<input type="checkbox" name="health-goals[]" value="Lose weight">
+											<i></i>
+										</label>
+										<span class="check-image__text">Lose weight</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<button type="submit" class="btn btn-warning btn-rounded full-width btn-next m-t-15">Save changes</button>
+				</div>
+			</div>
+		</div>
+
+		</form>
+
+
+		<div class="pagination-wrapper">
+			<div class="pagination">
+				<!--<div class="pagination__item third active"></div>-->
+				<div class="pagination__item fourth active"></div>
+				<div class="pagination__item fifth"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="hidden"></div>
+
+	<!-- SCRIPTS -->
+		<!-- JQuery -->
+		<script type="text/javascript" src="libs/mdb/js/jquery-3.1.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="libs/mdb/js/tether.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="libs/mdb/js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="libs/mdb/js/mdb.min.js"></script>
+		<!-- My own scripts -->
+		<script src="js/common.js"></script>
+		<script src="js/libs.js"></script>
+
+		<script src="js/jquery.serializejson.min.js"></script>
+		<script src="js/ls_onboarding.js"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				window.LS.profile.default_setup();
+				document.location.href = 'liquidstate://app_user/load_profile/';
+			});
+		</script>
+
+	<!-- SCRIPTS END -->
+</body>
+</html>
