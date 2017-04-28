@@ -5,6 +5,9 @@ $(function() {
         e.preventDefault();
         e.stopPropagation();
         var $target = $(e.target);
+        if (!$target.hasClass('ls-link')) {
+            $target = $target.closest('.ls-link'); 
+        }
         var url = $target.attr('href');
         if (!url) {
             url = $target.attr('data-href');
