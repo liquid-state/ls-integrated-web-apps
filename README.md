@@ -42,3 +42,18 @@ To get started rapidly with this example:
 * configure your Content Feature in Ubiquity using a height of around 30%
 * to test, use the test_viewport.html file
 
+
+## About screen
+
+Liquid State apps offer an "About" section typically accessible by using the action menu's "About" choice.
+
+The About section of the app contains three separate screens: a customisable "About" screen, "App Info" and "Acknowledgements". The first of these, the "About" screen can display any custom content by using an Integrated Web App.
+
+### About screen example 01
+
+This is a minimalistic example of an Integrated Web App which will display the content of an HTML page as the "About" screen in the app.
+Please note the name of the main file: "entrypoint_about.html" as opposed to the "entrypoint_default.html" typically found in other Integrated Web Apps.
+
+
+
+
